@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D'WINE FAMILY REFLEXOLOGY</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101b17;
+  color: white;
+  text-align: center;
+}
+header {
+  background: linear-gradient(135deg,#073b2b,#13845b);
+  padding: 35px 15px;
+}
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffd875;
+}
+header p {
+  font-size: 16px;
+}
+.container {
+  padding: 25px 18px;
+  max-width: 650px;
+  margin: auto;
+}
+h2 {
+  color: #ffd875;
+}
+.description {
+  line-height: 1.8;
+  font-size: 16px;
+}
+.services {
+  background: #1b3027;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.services p {
+  border-bottom: 1px solid #40584b;
+  padding: 8px;
+}
+.audio-box {
+  background: #243c30;
+  border: 1px solid #d5b65b;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 25px 0;
+}
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  margin: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.play {
+  background: #ffd875;
+  color: #15251c;
+}
+.pause {
+  background: #eeeeee;
+  color: #222;
+}
+.whatsapp {
+  display: block;
+  background: #19c568;
+  color: white;
+  padding: 17px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 25px;
+}
+footer {
+  background: #07140e;
+  padding: 22px 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">D'WINE</div>
+  <h1>FAMILY REFLEXOLOGY</h1>
+  <p>PIJAT REFLEKSI KELUARGA DAN PENGOBATAN</p>
+</header>
+
+<div class="container">
+
+<h2>SELAMAT DATANG DI D'WINE</h2>
+
+<p class="description">
+Badan terasa lelah? Otot terasa kaku?
+Ingin menikmati waktu relaksasi setelah
+aktivitas sehari-hari?
+<br><br>
+Yuk, luangkan waktu untuk merawat
+kebugaran tubuh Anda bersama
+D'WINE FAMILY REFLEXOLOGY.
+Nikmati pelayanan terapis kami
+dengan suasana nyaman dan bersih.
+</p>
+
+<div class="services">
+<h2>BERBAGAI TREATMENT TERSEDIA</h2>
+<p>✨ Pijat Tradisional dan Full Body Massage</p>
+<p>✨ Refleksi Kaki</p>
+<p>✨ Sport Massage</p>
+<p>✨ Bekam Basah dan Kop Kering</p>
+<p>✨ Totok Wajah</p>
+<p>✨ Sauna dan Ratus</p>
+<p>✨ Fisioterapi</p>
+<p>✨ Pijat Bayi</p>
+<p>✨ Terapi Relaksasi Lainnya</p>
+</div>
+
+<div class="audio-box">
+<h2>🔊 DENGARKAN IKLAN KAMI</h2>
+<p>Audio promosi D'WINE FAMILY REFLEXOLOGY</p>
+
+<audio id="iklan" autoplay preload="auto" loop>
+  <source src="https://mustaintain3-cell.github.io/Alam/IKLAN_DWINE.mp3"
+          type="audio/mpeg">
+  Browser Anda tidak mendukung audio.
+</audio>
+
+<button class="play" onclick="putarAudio()">
+▶ PUTAR IKLAN
+</button>
+
+<button class="pause" onclick="jedaAudio()">
+⏸ JEDA
+</button>
+
+<p id="status">Mempersiapkan audio iklan...</p>
+</div>
+
+<h2>AYO KUNJUNGI KAMI!</h2>
+
+<p>
+📍 Jalan Jenderal Sudirman,
+depan Kantor Camat Mandau,
+Air Jamban, Duri, Bengkalis, Riau.
+</p>
+
+<p>⏰ Buka setiap hari pukul 10.00 – 22.00 WIB</p>
+
+<a class="whatsapp"
+href="https://wa.me/6281274186569?text=Halo%20D%27WINE%2C%20saya%20ingin%20reservasi%20treatment."
+target="_blank">
+📱 BOOKING / RESERVASI WHATSAPP
+</a>
+
+</div>
+
+<footer>
+© 2026 D'WINE FAMILY REFLEXOLOGY
+<br>
+Melayani Anda dengan sepenuh hati.
+</footer>
+
+<script>
+const audio = document.getElementById("iklan");
+const statusAudio = document.getElementById("status");
+
+function putarAudio() {
+  audio.play().then(() => {
+    statusAudio.innerText = "🔊 Audio iklan sedang diputar";
+  }).catch(() => {
+    statusAudio.innerText = "Silakan coba tekan tombol putar kembali.";
+  });
+}
+
+function jedaAudio() {
+  audio.pause();
+  statusAudio.innerText = "⏸ Audio iklan dijeda";
+}
+
+audio.addEventListener("playing", () => {
+  statusAudio.innerText = "🔊 Audio iklan sedang diputar";
+});
+
+audio.addEventListener("error", () => {
+  statusAudio.innerText = "Audio gagal dimuat. Periksa link MP3.";
+});
+
+window.addEventListener("load", () => {
+  putarAudio();
+});
+</script>
+
+</body>
+</html>
