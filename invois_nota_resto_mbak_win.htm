@@ -3,153 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Resto Mbak Win - Invoice & Nota</title>
+<title>Invoice RESTO MBAK WIN</title>
 <style>
-:root{--gold:#b7791f;--dark:#292524;--cream:#fffaf0;--line:#e7e5e4}
-*{box-sizing:border-box} body{margin:0;background:#f5f5f4;color:var(--dark);font:15px Arial,sans-serif}
-header{background:linear-gradient(135deg,#78350f,#b7791f);color:white;padding:22px 16px;text-align:center}
-header h1{margin:0;font-size:25px;letter-spacing:1px} header p{margin:7px 0 0;font-size:13px}
-main{max-width:850px;margin:16px auto;padding:0 12px 30px}
-.panel,.paper{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 2px 8px #00000008}
-h2{font-size:18px;margin:0 0 13px;color:#92400e}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-label{display:block;font-size:12px;font-weight:bold;color:#57534e;margin-bottom:5px}
-input,textarea,select{width:100%;padding:11px;border:1px solid #d6d3d1;border-radius:8px;font:inherit;background:#fff}
+:root{--green:#176b45;--pale:#eaf5ee;--line:#d9e2dc;--ink:#202923}
+*{box-sizing:border-box}
+body{margin:0;background:#f2f5f3;color:var(--ink);font:15px Arial,sans-serif}
+.wrap{max-width:900px;margin:18px auto;padding:12px}
+.sheet{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 5px 22px #173d2610}
+header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;border-bottom:3px solid var(--green);padding-bottom:16px;margin-bottom:18px}
+h1{margin:0;color:var(--green);font-size:27px;letter-spacing:.4px}
+.sub{color:#607067;margin-top:6px;font-size:13px}
+.tag{font-size:12px;font-weight:bold;color:var(--green);background:var(--pale);padding:8px 12px;border-radius:20px;white-space:nowrap}
+h2{font-size:15px;margin:18px 0 10px;color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:block;font-size:12px;color:#526158;margin-bottom:5px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #cbd7cf;border-radius:7px;font:inherit;background:white;color:var(--ink)}
 textarea{min-height:65px;resize:vertical}
-.field{margin-bottom:10px}.wide{grid-column:1/-1}
-button{border:0;border-radius:9px;padding:11px 14px;font-weight:bold;font-size:14px;cursor:pointer}
-.primary{background:#92400e;color:white}.secondary{background:#e7e5e4;color:#292524}.green{background:#166534;color:white}.danger{background:#fee2e2;color:#991b1b}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:left}th{background:#fffbeb;color:#78350f}
-td input{padding:7px;min-width:55px}.num{text-align:right;white-space:nowrap}
+input[readonly]{background:#f3f6f4}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+th{background:var(--pale);color:#24553b;font-size:12px;text-align:left}
+th,td{padding:9px 7px;border-bottom:1px solid var(--line);vertical-align:middle}
+td input{padding:8px;min-width:0}
+.num{width:62px}.qty{width:70px}.price{width:115px}
 .item-name{min-width:120px}
-.summary{max-width:340px;margin:12px 0 0 auto}.sumrow{display:flex;justify-content:space-between;padding:6px 0}.grand{font-size:18px;font-weight:bold;border-top:2px solid #92400e;margin-top:5px;padding-top:10px}
-.tabs{display:flex;gap:8px;margin-bottom:14px}.tabs button{flex:1}.tabs button.active{background:#92400e;color:white}
-.paper-head{text-align:center;border-bottom:2px dashed #a8a29e;padding-bottom:12px;margin-bottom:12px}.paper-head h2{font-size:23px;margin:0;color:#92400e}.paper-head p{margin:5px 0;font-size:12px}
-.meta{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:13px;margin-bottom:12px}
-.meta div{padding:3px 0}.paper table th{background:#f5f5f4;color:#292524}.paper table th,.paper table td{padding:7px 4px}
-.paybox{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px;margin-top:12px}
-.footer{text-align:center;font-size:12px;color:#78716c;margin-top:18px}
-.small{font-size:12px;color:#78716c}.hidden{display:none!important}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.panel,.paper{padding:12px}.meta{grid-template-columns:1fr 1fr}table{font-size:12px}th,td{padding:7px 3px}.actions button{flex:1}}
+.remove{border:0;background:#fff0f0;color:#b42318;border-radius:6px;padding:8px}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
+button{border:0;border-radius:8px;padding:11px 14px;font-weight:bold;font-size:14px;cursor:pointer}
+.primary{background:var(--green);color:white}.secondary{background:#e9efeb;color:#244332}
+.danger{background:#fff0f0;color:#a12a22}
+.totals{margin:16px 0 0 auto;max-width:360px}
+.totalrow{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+.totalrow.grand{font-size:19px;font-weight:bold;color:var(--green);border-bottom:2px solid var(--green)}
+.notes{margin-top:18px}
+.foot{border-top:1px dashed #aab8ae;margin-top:22px;padding-top:13px;text-align:center;color:#65736a;font-size:12px}
+.hint{font-size:12px;color:#64736a;line-height:1.5;margin:10px 0}
+@media(max-width:600px){.wrap{padding:7px;margin:5px auto}.sheet{padding:14px;border-radius:10px}header{flex-direction:column}h1{font-size:23px}.grid{grid-template-columns:1fr}th,td{padding:6px 4px}.price{width:94px}.qty{width:52px}.num{width:40px}}
 @media print{
- body{background:white}.no-print,header,.tabs,.editor{display:none!important}main{max-width:none;margin:0;padding:0}.paper{border:0;box-shadow:none;border-radius:0;padding:0;margin:0}
- .paper.invoice{display:block!important}.paper.receipt{display:block!important}
+ body{background:#fff}.wrap{margin:0;padding:0;max-width:none}.sheet{border:0;border-radius:0;box-shadow:none;padding:0}
+ .no-print,.actions,.remove-col{display:none!important}
+ input,textarea{border:0!important;padding:2px!important;background:transparent!important}
+ input[readonly]{background:transparent!important}
+ th{background:#eaf5ee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{size:A4;margin:12mm}
 }
 </style>
 </head>
 <body>
-<header><h1>RESTO MBAK WIN</h1><p>CATERING & PESANAN MAKANAN</p></header>
-<main>
- <div class="tabs no-print">
-  <button id="tabInvoice" class="active" onclick="showDoc('invoice')">Invoice</button>
-  <button id="tabReceipt" class="secondary" onclick="showDoc('receipt')">Nota Pesanan</button>
- </div>
- <section class="panel editor no-print">
-  <h2>Data pelanggan & pesanan</h2>
-  <div class="grid">
-   <div class="field"><label>Nomor invoice / nota</label><input id="docNo" value="INV-001"></div>
-   <div class="field"><label>Tanggal pesanan</label><input id="date" type="date"></div>
-   <div class="field"><label>Nama pemesan</label><input id="customer" placeholder="Nama pelanggan"></div>
-   <div class="field"><label>Nomor HP</label><input id="phone" placeholder="08xxxxxxxxxx" inputmode="tel"></div>
-   <div class="field wide"><label>Alamat / lokasi pengiriman</label><textarea id="address" placeholder="Alamat pengiriman atau lokasi acara"></textarea></div>
-   <div class="field"><label>Tanggal & jam pengiriman</label><input id="delivery" placeholder="Contoh: 20 Nov 2026, pukul 10.00"></div>
-   <div class="field"><label>Metode pembayaran</label><select id="method"><option>Tunai</option><option>Transfer</option><option>QRIS</option><option>Belum dibayar</option></select></div>
-  </div>
-  <h2 style="margin-top:12px">Daftar menu</h2>
-  <div style="overflow-x:auto">
-   <table><thead><tr><th style="width:36%">Nama menu</th><th>Qty</th><th>Harga (Rp)</th><th class="num">Jumlah</th><th></th></tr></thead><tbody id="items"></tbody></table>
-  </div>
-  <div class="actions">
-   <button class="primary" onclick="addItem()">+ Tambah menu</button>
-   <button class="secondary" onclick="saveMenu()">Simpan menu saat ini</button>
-   <button class="secondary" onclick="loadMenu()">Pilih menu tersimpan</button>
-  </div>
-  <div class="grid">
-   <div class="field"><label>Diskon (Rp)</label><input id="discount" type="number" min="0" value="0" oninput="calculate()"></div>
-   <div class="field"><label>Uang muka / DP (Rp)</label><input id="dp" type="number" min="0" value="0" oninput="calculate()"></div>
-   <div class="field wide"><label>Catatan pesanan</label><textarea id="notes" placeholder="Contoh: sambal dipisah, tanpa sendok, dll."></textarea></div>
-  </div>
-  <div class="summary">
-   <div class="sumrow"><span>Subtotal</span><b id="subtotal">Rp0</b></div>
-   <div class="sumrow"><span>Diskon</span><b id="discountView">Rp0</b></div>
-   <div class="sumrow"><span>Total</span><b id="total">Rp0</b></div>
-   <div class="sumrow"><span>DP dibayar</span><b id="dpView">Rp0</b></div>
-   <div class="sumrow grand"><span>Sisa bayar</span><span id="remaining">Rp0</span></div>
-  </div>
-  <div class="actions">
-   <button class="green" onclick="printDoc()">Cetak / Simpan PDF</button>
-   <button class="secondary" onclick="saveOrder()">Simpan pesanan di HP</button>
-   <button class="secondary" onclick="newOrder()">Pesanan baru</button>
-  </div>
-  <p class="small">Data menu dan pesanan tersimpan di browser HP ini. Jika data browser dihapus atau berganti perangkat, data lokal bisa hilang.</p>
- </section>
+<div class="wrap">
+<div class="sheet">
+<header>
+ <div><h1>RESTO MBAK WIN</h1><div class="sub">INVOICE / TAGIHAN PESANAN</div><div class="sub">Terima kasih telah mempercayakan pesanan Anda kepada kami.</div></div>
+ <div class="tag">INVOICE</div>
+</header>
 
- <section id="invoicePaper" class="paper invoice">
-  <div class="paper-head"><h2>RESTO MBAK WIN</h2><p>CATERING & PESANAN MAKANAN</p><strong>INVOICE PESANAN</strong></div>
-  <div class="meta">
-   <div><b>No. Invoice:</b> <span class="v-no"></span></div><div><b>Tanggal:</b> <span class="v-date"></span></div>
-   <div><b>Pemesan:</b> <span class="v-customer"></span></div><div><b>No. HP:</b> <span class="v-phone"></span></div>
-   <div style="grid-column:1/-1"><b>Alamat:</b> <span class="v-address"></span></div>
-   <div style="grid-column:1/-1"><b>Pengiriman:</b> <span class="v-delivery"></span></div>
-  </div>
-  <table><thead><tr><th>Menu</th><th class="num">Qty</th><th class="num">Harga</th><th class="num">Jumlah</th></tr></thead><tbody class="v-items"></tbody></table>
-  <div class="summary">
-   <div class="sumrow"><span>Subtotal</span><b class="v-subtotal"></b></div><div class="sumrow"><span>Diskon</span><b class="v-discount"></b></div>
-   <div class="sumrow grand"><span>Total</span><span class="v-total"></span></div><div class="sumrow"><span>DP dibayar</span><b class="v-dp"></b></div><div class="sumrow"><span>Sisa pembayaran</span><b class="v-remaining"></b></div>
-  </div>
-  <div class="paybox"><b>Metode pembayaran:</b> <span class="v-method"></span><br><b>Catatan:</b> <span class="v-notes"></span></div>
-  <div class="footer">Terima kasih telah memesan di RESTO MBAK WIN.<br>Selamat menikmati, semoga berkenan.</div>
- </section>
+<div class="grid">
+ <div><label>Nomor invoice</label><input id="invoiceNo" readonly></div>
+ <div><label>Tanggal & jam dibuat (otomatis)</label><input id="createdAt" readonly></div>
+ <div><label>Nama pelanggan</label><input id="customer" placeholder="Nama pelanggan"></div>
+ <div><label>Nomor HP pelanggan</label><input id="phone" placeholder="08xxxxxxxxxx" inputmode="tel"></div>
+ <div><label>Tanggal jatuh tempo</label><input id="dueDate" type="date"></div>
+ <div><label>Jam jatuh tempo</label><input id="dueTime" type="time"></div>
+</div>
 
- <section id="receiptPaper" class="paper receipt hidden">
-  <div class="paper-head"><h2>RESTO MBAK WIN</h2><p>CATERING & PESANAN MAKANAN</p><strong>NOTA PESANAN</strong></div>
-  <div style="font-size:12px;line-height:1.7;margin-bottom:10px">
-   No: <b class="v-no"></b><br>Tanggal: <span class="v-date"></span><br>Pemesan: <span class="v-customer"></span><br>HP: <span class="v-phone"></span><br>Pengiriman: <span class="v-delivery"></span>
-  </div>
-  <table><thead><tr><th>Menu</th><th class="num">Qty</th><th class="num">Jumlah</th></tr></thead><tbody class="v-items-short"></tbody></table>
-  <div class="summary" style="font-size:13px">
-   <div class="sumrow"><span>Subtotal</span><b class="v-subtotal"></b></div><div class="sumrow"><span>Diskon</span><b class="v-discount"></b></div>
-   <div class="sumrow grand"><span>Total</span><span class="v-total"></span></div><div class="sumrow"><span>DP</span><b class="v-dp"></b></div><div class="sumrow"><span>Sisa</span><b class="v-remaining"></b></div>
-  </div>
-  <p style="font-size:12px"><b>Catatan:</b> <span class="v-notes"></span></p>
-  <div class="footer">Terima kasih - RESTO MBAK WIN</div>
- </section>
-</main>
+<h2>Rincian Pesanan</h2>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th class="num">No.</th><th>Nama menu / pesanan</th><th class="qty">Jumlah</th><th class="price">Harga (Rp)</th><th class="price">Subtotal (Rp)</th><th class="remove-col"> </th></tr></thead>
+<tbody id="items"></tbody>
+</table>
+</div>
+<div class="actions no-print"><button class="secondary" onclick="addItem()">＋ Tambah menu</button></div>
+
+<div class="totals">
+ <div class="totalrow"><span>Total pesanan</span><strong id="subtotal">Rp0</strong></div>
+ <div class="totalrow"><span>Diskon (Rp)</span><input id="discount" type="number" min="0" value="0" style="max-width:140px;text-align:right" oninput="calculate()"></div>
+ <div class="totalrow grand"><span>Total tagihan</span><strong id="grandTotal">Rp0</strong></div>
+ <div class="totalrow"><span>Uang muka / DP (Rp)</span><input id="paid" type="number" min="0" value="0" style="max-width:140px;text-align:right" oninput="calculate()"></div>
+ <div class="totalrow" style="font-weight:bold"><span>Sisa pembayaran</span><strong id="remaining">Rp0</strong></div>
+</div>
+
+<div class="grid notes">
+ <div><label>Status pembayaran</label><select id="status"><option value="Belum Lunas">Belum Lunas</option><option value="Lunas">Lunas</option><option value="DP / Sebagian">DP / Sebagian</option></select></div>
+ <div><label>Metode pembayaran</label><input id="method" placeholder="Tunai / Transfer / QRIS"></div>
+ <div style="grid-column:1/-1"><label>Catatan pesanan / alamat pengantaran</label><textarea id="note" placeholder="Tulis catatan tambahan di sini..."></textarea></div>
+</div>
+
+<div class="foot">RESTO MBAK WIN · Terima kasih atas pesanan Anda.</div>
+</div>
+
+<div class="actions no-print">
+ <button class="primary" onclick="printInvoice()">Cetak Invoice</button>
+ <button class="secondary" onclick="saveInvoice()">Simpan di HP</button>
+ <button class="secondary" onclick="newInvoice()">Invoice Baru</button>
+</div>
+<p class="hint no-print"><b>Cara cetak:</b> tekan “Cetak Invoice”, lalu pilih printer pada menu cetak Android. Untuk printer Wi-Fi, pastikan HP dan printer berada di jaringan yang sama. Untuk printer Bluetooth, pasangkan printer di pengaturan Bluetooth HP dan gunakan layanan/aplikasi cetak yang mendukung printer tersebut. Jika printer struk tidak muncul di menu Android, HTML ini memerlukan aplikasi/layanan penghubung printer yang kompatibel.</p>
+</div>
+
 <script>
-const rupiah=n=>'Rp'+Math.max(0,Number(n)||0).toLocaleString('id-ID');
-const $=id=>document.getElementById(id);
-let currentDoc='invoice';
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const rupiah = n => 'Rp' + Math.max(0,Number(n)||0).toLocaleString('id-ID');
+function pad(n){return String(n).padStart(2,'0')}
+function localDateTime(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes())}
+function setNewDefaults(){
+ const now=new Date(), due=new Date(now.getTime()+24*60*60*1000);
+ document.getElementById('createdAt').value=now.toLocaleDateString('id-ID',{day:'2-digit',month:'long',year:'numeric'})+' '+pad(now.getHours())+':'+pad(now.getMinutes());
+ document.getElementById('invoiceNo').value='INV-'+now.getFullYear()+pad(now.getMonth()+1)+pad(now.getDate())+'-'+pad(now.getHours())+pad(now.getMinutes())+pad(now.getSeconds());
+ document.getElementById('dueDate').value=due.getFullYear()+'-'+pad(due.getMonth()+1)+'-'+pad(due.getDate());
+ document.getElementById('dueTime').value='17:00';
+}
 function addItem(name='',qty=1,price=0){
  const tr=document.createElement('tr');
- tr.innerHTML=`<td><input class="item-name" placeholder="Nama menu" value="${esc(name)}" oninput="calculate()"></td><td><input class="qty" type="number" min="0" value="${qty}" oninput="calculate()"></td><td><input class="price" type="number" min="0" value="${price}" oninput="calculate()"></td><td class="num line-total">Rp0</td><td><button class="danger" onclick="this.closest('tr').remove();calculate()" aria-label="Hapus">×</button></td>`;
- $('items').appendChild(tr);calculate();
+ tr.innerHTML=`<td class="num"></td><td><input class="item-name" placeholder="Contoh: Nasi kotak" value="${String(name).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}" oninput="calculate()"></td><td><input class="qty" type="number" min="0" value="${qty}" oninput="calculate()"></td><td><input class="price" type="number" min="0" value="${price}" oninput="calculate()"></td><td class="line-total">Rp0</td><td class="remove-col"><button class="remove" onclick="this.closest('tr').remove();calculate()">×</button></td>`;
+ document.getElementById('items').appendChild(tr);calculate();
 }
-function rows(){return [...$('items').querySelectorAll('tr')].map(tr=>({name:tr.querySelector('.item-name').value,qty:Number(tr.querySelector('.qty').value)||0,price:Number(tr.querySelector('.price').value)||0}));}
-function totals(){let sub=rows().reduce((s,x)=>s+x.qty*x.price,0),disc=Number($('discount').value)||0,dp=Number($('dp').value)||0,total=Math.max(0,sub-disc);return{sub,disc,dp,total,remaining:Math.max(0,total-dp)};}
 function calculate(){
- let t=totals();[...$('items').querySelectorAll('tr')].forEach((tr,i)=>tr.querySelector('.line-total').textContent=rupiah(rows()[i].qty*rows()[i].price));
- $('subtotal').textContent=rupiah(t.sub);$('discountView').textContent=rupiah(t.disc);$('total').textContent=rupiah(t.total);$('dpView').textContent=rupiah(t.dp);$('remaining').textContent=rupiah(t.remaining);render();
+ let sum=0;
+ [...document.querySelectorAll('#items tr')].forEach((tr,i)=>{
+  tr.cells[0].textContent=i+1;
+  const q=Number(tr.querySelector('.qty').value)||0,p=Number(tr.querySelector('.price').value)||0;
+  const line=q*p;sum+=line;tr.querySelector('.line-total').textContent=rupiah(line);
+ });
+ const disc=Math.max(0,Number(document.getElementById('discount').value)||0);
+ const total=Math.max(0,sum-disc),paid=Math.max(0,Number(document.getElementById('paid').value)||0);
+ document.getElementById('subtotal').textContent=rupiah(sum);
+ document.getElementById('grandTotal').textContent=rupiah(total);
+ document.getElementById('remaining').textContent=rupiah(Math.max(0,total-paid));
 }
-function setText(cls,val){document.querySelectorAll('.'+cls).forEach(e=>e.textContent=val||'-');}
-function render(){
- const t=totals(),data={no:$('docNo').value,date:$('date').value,customer:$('customer').value,phone:$('phone').value,address:$('address').value,delivery:$('delivery').value,method:$('method').value,notes:$('notes').value};
- setText('v-no',data.no);setText('v-date',data.date);setText('v-customer',data.customer);setText('v-phone',data.phone);setText('v-address',data.address);setText('v-delivery',data.delivery);setText('v-method',data.method);setText('v-notes',data.notes);
- setText('v-subtotal',rupiah(t.sub));setText('v-discount',rupiah(t.disc));setText('v-total',rupiah(t.total));setText('v-dp',rupiah(t.dp));setText('v-remaining',rupiah(t.remaining));
- let full=rows().filter(x=>x.name||x.qty).map(x=>`<tr><td>${esc(x.name||'Menu')}</td><td class="num">${x.qty}</td><td class="num">${rupiah(x.price)}</td><td class="num">${rupiah(x.qty*x.price)}</td></tr>`).join('')||'<tr><td colspan="4">Belum ada menu</td></tr>';
- let short=rows().filter(x=>x.name||x.qty).map(x=>`<tr><td>${esc(x.name||'Menu')}</td><td class="num">${x.qty}</td><td class="num">${rupiah(x.qty*x.price)}</td></tr>`).join('')||'<tr><td colspan="3">Belum ada menu</td></tr>';
- document.querySelectorAll('.v-items').forEach(e=>e.innerHTML=full);document.querySelectorAll('.v-items-short').forEach(e=>e.innerHTML=short);
+function snapshot(){
+ return {html:document.querySelector('.sheet').innerHTML, invoiceNo:document.getElementById('invoiceNo').value};
 }
-function showDoc(which){currentDoc=which;$('invoicePaper').classList.toggle('hidden',which!=='invoice');$('receiptPaper').classList.toggle('hidden',which!=='receipt');$('tabInvoice').classList.toggle('active',which==='invoice');$('tabReceipt').classList.toggle('active',which==='receipt');$('tabInvoice').classList.toggle('secondary',which!=='invoice');$('tabReceipt').classList.toggle('secondary',which!=='receipt');}
-function printDoc(){render();showDoc(currentDoc);window.print();}
-function saveMenu(){let menu=rows().filter(x=>x.name);localStorage.setItem('mbw_menu',JSON.stringify(menu));alert('Daftar menu berhasil disimpan di HP ini.');}
-function loadMenu(){let menu=JSON.parse(localStorage.getItem('mbw_menu')||'[]');if(!menu.length){alert('Belum ada menu tersimpan. Isi menu lalu tekan Simpan menu saat ini.');return;}menu.forEach(x=>addItem(x.name,x.qty||1,x.price));}
-function orderData(){return{docNo:$('docNo').value,date:$('date').value,customer:$('customer').value,phone:$('phone').value,address:$('address').value,delivery:$('delivery').value,method:$('method').value,notes:$('notes').value,discount:$('discount').value,dp:$('dp').value,items:rows()};}
-function saveOrder(){let list=JSON.parse(localStorage.getItem('mbw_orders')||'[]');list.push(orderData());localStorage.setItem('mbw_orders',JSON.stringify(list));alert('Pesanan disimpan di HP ini.');}
-function newOrder(){if(!confirm('Mulai pesanan baru? Pastikan pesanan sekarang sudah disimpan atau dicetak.'))return;$('items').innerHTML='';['customer','phone','address','delivery','notes'].forEach(id=>$(id).value='');$('discount').value=0;$('dp').value=0;$('docNo').value='INV-'+String(Date.now()).slice(-6);addItem();calculate();}
-$('date').value=new Date().toISOString().slice(0,10);
-['docNo','date','customer','phone','address','delivery','method','notes'].forEach(id=>$(id).addEventListener('input',render));
-addItem();showDoc('invoice');calculate();
+function saveInvoice(){
+ const data={invoiceNo:invoiceNo.value,createdAt:createdAt.value,customer:customer.value,phone:phone.value,dueDate:dueDate.value,dueTime:dueTime.value,rows:[...document.querySelectorAll('#items tr')].map(tr=>[tr.querySelector('.item-name').value,tr.querySelector('.qty').value,tr.querySelector('.price').value]),discount:discount.value,paid:paid.value,status:status.value,method:method.value,note:note.value};
+ localStorage.setItem('restoMbakWinInvoice_'+data.invoiceNo,JSON.stringify(data));
+ alert('Invoice tersimpan di penyimpanan browser HP ini.');
+}
+function printInvoice(){
+ calculate();
+ const due=document.getElementById('dueDate').value;
+ if(!due){alert('Silakan isi tanggal jatuh tempo.');return;}
+ window.print();
+}
+function newInvoice(){
+ if(!confirm('Buat invoice baru? Pastikan invoice saat ini sudah disimpan atau dicetak.'))return;
+ ['customer','phone','discount','paid','method','note'].forEach(id=>document.getElementById(id).value=id==='discount'||id==='paid'?'0':'');
+ document.getElementById('status').value='Belum Lunas';
+ document.getElementById('items').innerHTML='';
+ addItem();setNewDefaults();calculate();
+}
+setNewDefaults();addItem();calculate();
 </script>
-</body></html>
+</body>
+</html>
